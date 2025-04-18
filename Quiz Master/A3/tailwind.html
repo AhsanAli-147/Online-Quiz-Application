@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>QuizMaster App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6200ea',
+                        primaryDark: '#3700b3',
+                    },
+                    animation: {
+                        fadeIn: 'fadeIn 0.5s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .page {
+                @apply hidden;
+            }
+            .page:target {
+                @apply block;
+            }
+            .min-h-main {
+                min-height: calc(100vh - 160px);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 leading-relaxed">
+    <!-- Header with Navigation -->
+    <header class="bg-primary text-white py-4 text-center  top-0 w-full z-50">
+        <h1 class="text-2xl font-bold">QuizMaster</h1>
+        <nav class="flex justify-center gap-5 flex-wrap mt-2">
+            <a href="#register" class="text-white no-underline px-3 py-1 rounded transition-colors hover:bg-primaryDark">Register</a>
+            <a href="#login" class="text-white no-underline px-3 py-1 rounded transition-colors hover:bg-primaryDark">Login</a>
+            <a href="#home" class="text-white no-underline px-3 py-1 rounded transition-colors hover:bg-primaryDark">Home</a>
+            <a href="#quiz" class="text-white no-underline px-3 py-1 rounded transition-colors hover:bg-primaryDark">Quiz</a>
+            <a href="#results" class="text-white no-underline px-3 py-1 rounded transition-colors hover:bg-primaryDark">View Results</a>
+            <a href="#contact" class="text-white no-underline px-3 py-1 rounded transition-colors hover:bg-primaryDark">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="mt-20 px-5 max-w-4xl mx-auto min-h-main">
+        <!-- Register Page -->
+        <section id="register" class="page animate-fadeIn">
+            <div class="bg-white p-5 rounded-lg shadow-md max-w-lg mx-auto">
+                <h2 class="text-2xl font-bold mb-4">Create Your Account</h2>
+                <form>
+                    <label for="reg-username" class="block text-left mt-3 mb-1">Username:</label>
+                    <input type="text" id="reg-username" required class="w-full px-3 py-2 border border-gray-300 rounded mb-3">
+
+                    <label for="reg-email" class="block text-left mt-3 mb-1">Email:</label>
+                    <input type="email" id="reg-email" required class="w-full px-3 py-2 border border-gray-300 rounded mb-3">
+
+                    <label for="reg-password" class="block text-left mt-3 mb-1">Password:</label>
+                    <input type="password" id="reg-password" required class="w-full px-3 py-2 border border-gray-300 rounded mb-3">
+
+                    <label for="confirm-password" class="block text-left mt-3 mb-1">Confirm Password:</label>
+                    <input type="password" id="confirm-password" required class="w-full px-3 py-2 border border-gray-300 rounded mb-3">
+
+                    <button type="submit" class="bg-primary text-white px-4 py-2 rounded no-underline inline-block mt-3 hover:bg-primaryDark transition-colors">Register</button>
+                </form>
+                <p class="mt-4">Already have an account? <a href="#login" class="text-primary hover:underline">Login here</a></p>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login" class="page animate-fadeIn">
+            <div class="bg-white p-5 rounded-lg shadow-md max-w-lg mx-auto">
+                <h2 class="text-2xl font-bold mb-4">Welcome Back!</h2>
+                <form>
+                    <label for="username" class="block text-left mt-3 mb-1">Username:</label>
+                    <input type="text" id="username" required class="w-full px-3 py-2 border border-gray-300 rounded mb-3">
+
+                    <label for="password" class="block text-left mt-3 mb-1">Password:</label>
+                    <input type="password" id="password" required class="w-full px-3 py-2 border border-gray-300 rounded mb-3">
+
+                    <button type="submit" class="bg-primary text-white px-4 py-2 rounded no-underline inline-block mt-3 hover:bg-primaryDark transition-colors">Login</button>
+                </form>
+                <p class="mt-4">New user? <a href="#register" class="text-primary hover:underline">Register here</a></p>
+                <p class="mt-2">Continue to <a href="#home" class="text-primary hover:underline">Home Page</a></p>
+            </div>
+        </section>
+
+        <!-- Home Page -->
+        <section id="home" class="page animate-fadeIn text-center py-4 mb-5">
+            <h2 class="text-2xl font-bold mb-3">Welcome to QuizMaster!</h2>
+            <p class="mb-6">Test your knowledge with our exciting quiz.</p>
+            <div class="my-6 text-center">
+                <a href="#quiz" class="bg-primary text-white px-4 py-2 rounded no-underline inline-block hover:bg-primaryDark transition-colors">Start Quiz Now</a>
+            </div>
+            <div class="bg-white p-5 rounded-lg shadow-md max-w-2xl mx-auto text-left">
+                <h3 class="text-xl font-bold mb-3">How it works:</h3>
+                <ol class="list-decimal pl-5 space-y-2">
+                    <li>Answer 5 multiple-choice questions</li>
+                    <li>Submit your answers</li>
+                    <li>View your results</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Quiz Page -->
+        <section id="quiz" class="page animate-fadeIn">
+            <h2 class="text-2xl font-bold mb-4">General Knowledge Quiz</h2>
+            <form id="quiz-form" action="#results" method="get">
+                <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+                    <p class="font-medium mb-2">1. What is the capital of France?</p>
+                    <label class="block mb-2"><input type="radio" name="q1" value="a" required class="mr-2"> Paris</label>
+                    <label class="block mb-2"><input type="radio" name="q1" value="b" class="mr-2"> London</label>
+                    <label class="block"><input type="radio" name="q1" value="c" class="mr-2"> Berlin</label>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+                    <p class="font-medium mb-2">2. Which planet is known as the Red Planet?</p>
+                    <label class="block mb-2"><input type="radio" name="q2" value="a" required class="mr-2"> Venus</label>
+                    <label class="block mb-2"><input type="radio" name="q2" value="b" class="mr-2"> Mars</label>
+                    <label class="block"><input type="radio" name="q2" value="c" class="mr-2"> Jupiter</label>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+                    <p class="font-medium mb-2">3. What is the largest mammal on Earth?</p>
+                    <label class="block mb-2"><input type="radio" name="q3" value="a" required class="mr-2"> Elephant</label>
+                    <label class="block mb-2"><input type="radio" name="q3" value="b" class="mr-2"> Blue Whale</label>
+                    <label class="block"><input type="radio" name="q3" value="c" class="mr-2"> Giraffe</label>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+                    <p class="font-medium mb-2">4. Which language is used for web styling?</p>
+                    <label class="block mb-2"><input type="radio" name="q4" value="a" required class="mr-2"> JavaScript</label>
+                    <label class="block mb-2"><input type="radio" name="q4" value="b" class="mr-2"> HTML</label>
+                    <label class="block"><input type="radio" name="q4" value="c" class="mr-2"> CSS</label>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg shadow-sm mb-6">
+                    <p class="font-medium mb-2">5. How many continents are there?</p>
+                    <label class="block mb-2"><input type="radio" name="q5" value="a" required class="mr-2"> 5</label>
+                    <label class="block mb-2"><input type="radio" name="q5" value="b" class="mr-2"> 7</label>
+                    <label class="block"><input type="radio" name="q5" value="c" class="mr-2"> 9</label>
+                </div>
+
+                <button type="submit" class="bg-primary text-white px-4 py-2 rounded no-underline inline-block hover:bg-primaryDark transition-colors">Submit Quiz</button>
+            </form>
+        </section>
+
+        <!-- Results Page -->
+        <section id="results" class="page animate-fadeIn text-center">
+            <h2 class="text-2xl font-bold mb-4">Your Quiz Results</h2>
+            <div class="text-primary text-4xl font-bold my-5">80%</div>
+            <p class="mb-6">You answered 4 out of 5 questions correctly!</p>
+
+            <div class="bg-white p-5 rounded-lg shadow-md max-w-2xl mx-auto text-left">
+                <h3 class="text-xl font-bold mb-3">Question Review:</h3>
+                <p class="mb-2">1. What is the capital of France? <strong class="text-green-600">✓ Correct (Paris)</strong></p>
+                <p class="mb-2">2. Which planet is known as the Red Planet? <strong class="text-green-600">✓ Correct (Mars)</strong></p>
+                <p class="mb-2">3. What is the largest mammal on Earth? <strong class="text-green-600">✓ Correct (Blue Whale)</strong></p>
+                <p class="mb-2">4. Which language is used for web styling? <strong class="text-green-600">✓ Correct (CSS)</strong></p>
+                <p class="mb-2">5. How many continents are there? <strong class="text-red-600">✗ Incorrect (Correct answer: 7)</strong></p>
+            </div>
+
+            <div class="my-8 space-x-4">
+                <a href="#quiz" class="bg-primary text-white px-4 py-2 rounded no-underline inline-block hover:bg-primaryDark transition-colors">Retake Quiz</a>
+                <a href="#contact" class="bg-primary text-white px-4 py-2 rounded no-underline inline-block hover:bg-primaryDark transition-colors">Contact Us</a>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page animate-fadeIn">
+            <h2 class="text-2xl font-bold mb-4 text-center">Contact Us</h2>
+            <div class="bg-white p-5 rounded-lg shadow-md max-w-lg mx-auto">
+                <form>
+                    <label for="name" class="block text-left mt-3 mb-1">Your Name:</label>
+                    <input type="text" id="name" required class="w-full px-3 py-2 border border-gray-300 rounded mb-3">
+
+                    <label for="email" class="block text-left mt-3 mb-1">Your Email:</label>
+                    <input type="email" id="email" required class="w-full px-3 py-2 border border-gray-300 rounded mb-3">
+
+                    <label for="message" class="block text-left mt-3 mb-1">Message:</label>
+                    <textarea id="message" rows="5" required class="w-full px-3 py-2 border border-gray-300 rounded mb-3"></textarea>
+
+                    <button type="submit" class="bg-primary text-white px-4 py-2 rounded no-underline inline-block mt-3 hover:bg-primaryDark transition-colors">Send Message</button>
+                </form>
+            </div>
+            <div class="text-center mt-6">
+                <p>Or email us at: <strong class="text-primary">ahsanmalick158@gmail.com</strong></p>
+                <a href="#home" class="bg-primary text-white px-4 py-2 rounded no-underline inline-block mt-4 hover:bg-primaryDark transition-colors">Back to Home</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-4 text-center  bottom-0 w-full">
+        <p>&copy; 2024 QuizMaster. All rights reserved.</p>
+    </footer>
+
+    <script>
+        if (!window.location.hash) {
+            window.location.hash = "register";
+        }
+    </script>
+</body>
+</html>

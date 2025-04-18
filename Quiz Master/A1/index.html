@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>QuizMaster App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <h1>QuizMaster</h1>
+        <nav>
+            <a href="#register">Register</a>
+            <a href="#login">Login</a>
+            <a href="#home">Home</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#results">View Results</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Register Page -->
+        <section id="register" class="page">
+            <div class="auth-form">
+                <h2>Create Your Account</h2>
+                <form>
+                    <label for="reg-username">Username:</label>
+                    <input type="text" id="reg-username" required>
+
+                    <label for="reg-email">Email:</label>
+                    <input type="email" id="reg-email" required>
+
+                    <label for="reg-password">Password:</label>
+                    <input type="password" id="reg-password" required>
+
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" required>
+
+                    <button type="submit" class="btn">Register</button>
+                </form>
+                <p>Already have an account? <a href="#login" class="btn">Login here</a></p>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login" class="page">
+            <div class="auth-form">
+                <h2>Welcome Back!</h2>
+                <form>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <p>New user? <a href="#register" class="btn">Register here</a></p>
+                <p>Continue to <a href="#home" class="btn">Home Page</a></p>
+            </div>
+        </section>
+
+        <!-- Home Page -->
+        <section id="home" class="page">
+            <h2>Welcome to QuizMaster!</h2>
+            <p>Test your knowledge with our exciting quiz.</p>
+            <div class="centered">
+                <a href="#quiz" class="btn">Start Quiz Now</a>
+            </div>
+            <div class="info-box">
+                <h3>How it works:</h3>
+                <ol>
+                    <li>Answer 5 multiple-choice questions</li>
+                    <li>Submit your answers</li>
+                    <li>View your results</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Quiz Page -->
+        <section id="quiz" class="page">
+            <h2>General Knowledge Quiz</h2>
+            <form id="quiz-form" action="#results" method="get">
+                <div class="question">
+                    <p>1. What is the capital of France?</p>
+                    <label><input type="radio" name="q1" value="a" required> Paris</label><br>
+                    <label><input type="radio" name="q1" value="b"> London</label><br>
+                    <label><input type="radio" name="q1" value="c"> Berlin</label>
+                </div>
+                <!-- Repeat question blocks similarly -->
+                <div class="question">
+                    <p>2. Which planet is known as the Red Planet?</p>
+                    <label><input type="radio" name="q2" value="a" required> Venus</label><br>
+                    <label><input type="radio" name="q2" value="b"> Mars</label><br>
+                    <label><input type="radio" name="q2" value="c"> Jupiter</label>
+                </div>
+                <div class="question">
+                    <p>3. What is the largest mammal on Earth?</p>
+                    <label><input type="radio" name="q3" value="a" required> Elephant</label><br>
+                    <label><input type="radio" name="q3" value="b"> Blue Whale</label><br>
+                    <label><input type="radio" name="q3" value="c"> Giraffe</label>
+                </div>
+                <div class="question">
+                    <p>4. Which language is used for web styling?</p>
+                    <label><input type="radio" name="q4" value="a" required> JavaScript</label><br>
+                    <label><input type="radio" name="q4" value="b"> HTML</label><br>
+                    <label><input type="radio" name="q4" value="c"> CSS</label>
+                </div>
+                <div class="question">
+                    <p>5. How many continents are there?</p>
+                    <label><input type="radio" name="q5" value="a" required> 5</label><br>
+                    <label><input type="radio" name="q5" value="b"> 7</label><br>
+                    <label><input type="radio" name="q5" value="c"> 9</label>
+                </div>
+
+                <button type="submit" class="btn">Submit Quiz</button>
+            </form>
+        </section>
+
+        <!-- Results Page -->
+        <section id="results" class="page">
+            <h2>Your Quiz Results</h2>
+            <div class="score">80%</div>
+            <p>You answered 4 out of 5 questions correctly!</p>
+
+            <div class="info-box">
+                <h3>Question Review:</h3>
+                <p>1. What is the capital of France? <strong>✓ Correct (Paris)</strong></p>
+                <p>2. Which planet is known as the Red Planet? <strong>✓ Correct (Mars)</strong></p>
+                <p>3. What is the largest mammal on Earth? <strong>✓ Correct (Blue Whale)</strong></p>
+                <p>4. Which language is used for web styling? <strong>✓ Correct (CSS)</strong></p>
+                <p>5. How many continents are there? <strong>✗ Incorrect (Correct answer: 7)</strong></p>
+            </div>
+
+            <div class="centered">
+                <a href="#quiz" class="btn">Retake Quiz</a>
+                <a href="#contact" class="btn">Contact Us</a>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <h2>Contact Us</h2>
+            <div class="contact-form">
+                <form>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="5" required></textarea>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+            <div class="centered">
+                <p>Or email us at: <strong>ahsanmalick158@gmail.com</strong></p>
+                <a href="#home" class="btn">Back to Home</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 QuizMaster. All rights reserved.</p>
+    </footer>
+
+    <script>
+        if (!window.location.hash) {
+            window.location.hash = "register";
+        }
+    </script>
+</body>
+</html>
