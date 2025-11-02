@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahsan Ali | Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-blue-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-500 to-blue-700 text-white text-center py-10 shadow-lg fade-in">
+    <img src="https://i.postimg.cc/x1qRXBsp/Ahsan-Ali.jpg" alt="Ahsan Ali Photo"
+         class="w-32 h-32 rounded-full mx-auto border-4 border-white object-cover mb-4 float-hover transition-transform duration-300">
+    <h1 class="text-3xl font-bold tracking-wide">Ahsan Ali</h1>
+    <p class="text-lg">BS Computer Science | University of Gujrat</p>
+
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle"
+            class="mt-4 bg-white text-blue-700 px-4 py-2 rounded-lg shadow hover:bg-blue-100 transition">
+      🌙 Dark Mode
+    </button>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="bg-blue-100 shadow-md sticky top-0 z-50 fade-in">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center py-3">
+      <h2 class="text-xl font-semibold text-blue-700">Portfolio</h2>
+      <button id="menu-btn" class="md:hidden text-blue-700 text-2xl focus:outline-none">☰</button>
+      <div id="menu" class="hidden md:flex space-x-6 text-blue-700 font-medium">
+        <a href="#about" class="hover:text-blue-600 transition">About</a>
+        <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+        <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+        <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden flex-col bg-blue-50 px-4 pb-4 space-y-3 md:hidden">
+      <a href="#about" class="hover:text-blue-600">About</a>
+      <a href="#skills" class="hover:text-blue-600">Skills</a>
+      <a href="#projects" class="hover:text-blue-600">Projects</a>
+      <a href="#contact" class="hover:text-blue-600">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- About Section -->
+    <section id="about" class="max-w-3xl mx-auto bg-white mt-10 p-6 rounded-xl shadow reveal">
+      <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-400 pb-2 mb-4">About Me</h2>
+      <p>
+        Hi! I’m <strong>Ahsan Ali</strong>, a passionate and creative Computer Science student at the University of Gujrat.
+        I enjoy learning new technologies, developing web projects, and solving coding problems.
+        My goal is to become a skilled software developer and create innovative digital solutions.
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-3xl mx-auto bg-white mt-10 p-6 rounded-xl shadow reveal">
+      <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-400 pb-2 mb-4">Skills</h2>
+      <ul class="list-disc list-inside space-y-1">
+        <li>HTML, CSS, JavaScript</li>
+        <li>C++ Programming</li>
+        <li>Web Development (Front-End)</li>
+        <li>Basic Networking</li>
+        <li>Database Concepts (SQL)</li>
+        <li>Team Management & Communication</li>
+      </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-6xl mx-auto bg-white mt-10 p-6 rounded-xl shadow reveal">
+      <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-400 pb-2 mb-6 text-center">Projects</h2>
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+        <div class="card bg-blue-50 rounded-lg p-4 shadow hover:shadow-xl hover:-translate-y-1 transition-transform duration-300">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">QuizMaster App</h3>
+          <p>A web-based quiz platform with register, login, and score calculation features.</p>
+        </div>
+        <div class="card bg-blue-50 rounded-lg p-4 shadow hover:shadow-xl hover:-translate-y-1 transition-transform duration-300">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Library Management System</h3>
+          <p>Manages books, members, and transactions efficiently with database support.</p>
+        </div>
+        <div class="card bg-blue-50 rounded-lg p-4 shadow hover:shadow-xl hover:-translate-y-1 transition-transform duration-300">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Car Rental System</h3>
+          <p>A booking system for rentals, returns, and customer management.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-3xl mx-auto bg-white mt-10 p-6 rounded-xl shadow text-center reveal">
+      <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-400 pb-2 mb-4">Contact Me</h2>
+      <p class="mb-4">I'd love to hear from you! You can reach me directly at:</p>
+      <a href="mailto:ahsanmalick158@gmail.com" class="text-blue-600 font-semibold hover:underline">ahsanmalick158@gmail.com</a>
+
+      <p class="mt-6 text-gray-600">Or send me a quick message:</p>
+      <form class="space-y-4 max-w-md mx-auto mt-4">
+        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" required>
+        <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" required>
+        <textarea placeholder="Your Message" rows="4" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" required></textarea>
+        <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 mt-10 bg-blue-100 text-blue-800 text-sm fade-in">
+    © 2025 Ahsan Ali | University of Gujrat
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="topBtn" class="hidden fixed bottom-6 right-6 bg-blue-500 text-white rounded-full p-3 text-lg shadow-md hover:bg-blue-600 transition">
+    ↑
+  </button>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

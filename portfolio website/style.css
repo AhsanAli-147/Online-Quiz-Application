@@ -1,0 +1,78 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body, header, section, footer {
+  transition: all 0.4s ease-in-out;
+}
+
+/* 🌙 Dark Mode */
+.dark-mode {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+.dark-mode header {
+  background: linear-gradient(to right, #1e3a8a, #1e40af) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode section,
+.dark-mode nav,
+.dark-mode footer {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+.dark-mode nav a,
+.dark-mode a,
+.dark-mode button,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode li {
+  color: #ffffff !important;
+}
+
+.dark-mode .card {
+  background-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode #theme-toggle {
+  background-color: #ffffff !important;
+  color: #1e40af !important;
+}
+
+/* 🌟 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.float-hover:hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ✨ Reveal on Scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
